@@ -1,0 +1,14 @@
+<h1> <%= @poem.title %> </h1>
+
+<p>TITLE : <strong><%= @poem.title %></strong> <br>
+
+	AUTHOR : <strong><%= @poem.author %></strong> <br>
+
+	CONTENT : <strong><%= @poem.content %></strong>
+</p>
+
+<p>
+	<%= link_to "edit this poem", edit_poem_path(@poet, @poem) %>
+	<%= link_to "delete this poem", poem_path(@poet, @poem), method: :delete, data: { confirm: 'Are you sure you want to delete this poem?'} %> 
+	<%= link_to "Back to the Poems", poems_path %>
+</p>	

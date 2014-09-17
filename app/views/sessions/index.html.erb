@@ -1,0 +1,11 @@
+<p>Welcome to Poets.</p>
+
+<% if logged_in? %>
+	<p>You are logged in !</p>
+<% else %>
+	<p>You are not logged in .</p>
+<% end %>
+
+<%= link_to "Sign up!", signup_path %><br>
+<%= link_to "Log in!", sessions_path %><br>
+<%= link_to "Log out!", log_out_path, method: :delete%>

@@ -1,0 +1,19 @@
+<h1>New Poet</h1>
+
+<%= form_for @poet, url: poets_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :origin %><br>
+    <%= f.text_field :origin %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <%= link_to "Back to the Poets", poets_path %>
+<% end %>

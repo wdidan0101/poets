@@ -1,0 +1,38 @@
+<h1>The Poet Profile of <%= @poet.name %></h1>
+
+<p>
+  <strong>name:</strong>
+  <%= @poet.name %>
+</p>
+ 
+<p>
+  <strong>origin:</strong>
+  <%= @poet.origin %>
+</p>
+
+<!-- -->
+<h2>The Poems of <%=@poet.name%></h2>
+
+<ul>
+	<% @poet.poems.each do |p| %>
+	<li>	
+	<p>
+		<%= p.title %> 
+		<%= p.author %> 
+		<%= p.content %>
+	</p>
+	</li>
+	<% end %>
+</ul>
+
+<!-- -->
+
+<p><%= link_to "edit this poet", edit_poet_path(@poet) %></p>
+
+<p> <%= link_to "delete this poet", @poet, method: :delete, data: { confirm: 'Are you sure you want to delete this poet?'} %> </p>
+
+<!-- <p><%#= link_to "back to the Poets!", poets_path %></p> -->
+<p><%= link_to "welcome page", welcome_path(@poet.user) %></p>
+
+<br>
+<p><%= link_to "add a poem", new_poem_path(@poet) %></p>
