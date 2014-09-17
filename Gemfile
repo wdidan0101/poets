@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'mongoid', github: 'mongoid/mongoid'
 
-gem 'genghis', '~> 1.4.1'
+gem 'genghis', '~> 1.4.1', group: :development
 
 gem 'bcrypt', '~> 3.1.7'
 
