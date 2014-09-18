@@ -6,6 +6,7 @@ class PoetsController < ApplicationController
 
   	def show
   		@poet = Poet.find(params[:id])
+  		@edit = true
 	end
 
 	def new
@@ -31,6 +32,7 @@ class PoetsController < ApplicationController
 
 	def edit
 		@poet = Poet.find(params[:id])
+		@edit = false
 	end
 
 

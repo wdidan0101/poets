@@ -1,17 +1,28 @@
-<h1>Sign Up!</h1>
+<h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
-     <%= f.label :name %>
-     <%= f.text_field :name %>
+     
+    <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+ 	</div>
 
+ 	<div>
      <%= f.label :email %>
      <%= f.text_field :email %>
+     </div>
 
+     <div>
      <%= f.label :origin %>
      <%= f.text_field :origin %>
+     </div>
 
+     <div>
      <%= f.label :password %>
      <%= f.text_field :password %>
+     </div>
 
+     <div class="sign-up-filler"></div>
      <%= f.submit "Sign Me Up!" %>
+ 	
 <% end %>

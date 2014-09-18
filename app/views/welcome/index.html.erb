@@ -1,13 +1,16 @@
 
-<h1>Welcome to Poets.</h1>
-<h2>Username : <%= @user.name %></h2>
+<div class="welcome">
+<h2>Welcome to Poets, </h2>
+<h1> <%= @user.name %> .</h1>
 
 <p><%#= link_to 'go to your poems', poems_path %></p>
 
 <% if !@user.poet %>
 	<p><%= link_to 'create poet profile', new_poet_path %></p>
 <% else %>
-	<p><%= link_to 'your poems', poems_path(@user.poet) %></p>
+	<p><%#= link_to 'your poems', poems_path(@user.poet) %></p>
 <% end %>
 
-<p><%= link_to "log out!", log_out_path, method: :delete%></p>
+<p><%#= link_to "log out!", log_out_path, method: :delete%></p>
+
+</div>

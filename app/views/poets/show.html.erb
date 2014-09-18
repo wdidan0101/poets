@@ -1,38 +1,19 @@
-<h1>The Poet Profile of <%= @poet.name %></h1>
+<h3 class="text-center">the poetic work of </h3>
+<h1 class="text-center"><%= @poet.name %> </h1>
+<h4 class="text-center">of <%= @poet.origin %></h4>		
 
-<p>
-  <strong>name:</strong>
-  <%= @poet.name %>
-</p>
- 
-<p>
-  <strong>origin:</strong>
-  <%= @poet.origin %>
-</p>
+<div class="filler"></div>
 
-<!-- -->
-<h2>The Poems of <%=@poet.name%></h2>
+<% @poet.poems.each do |p| %>
+	<div class="poem-title"> <%= link_to p.title, poem_path(@poet.id, p) %> </div>
+<% end %>
 
-<ul>
-	<% @poet.poems.each do |p| %>
-	<li>	
-	<p>
-		<%= p.title %> 
-		<%= p.author %> 
-		<%= p.content %>
-	</p>
-	</li>
-	<% end %>
-</ul>
 
-<!-- -->
-
-<p><%= link_to "edit this poet", edit_poet_path(@poet) %></p>
-
-<p> <%= link_to "delete this poet", @poet, method: :delete, data: { confirm: 'Are you sure you want to delete this poet?'} %> </p>
-
-<!-- <p><%#= link_to "back to the Poets!", poets_path %></p> -->
-<p><%= link_to "welcome page", welcome_path(@poet.user) %></p>
+<!-- 
+<p><%#= link_to "edit this poet", edit_poet_path(@poet) %></p>
+<p> <%#= link_to "delete this poet", @poet, method: :delete, data: { confirm: 'Are you sure you want to delete this poet?'} %> </p>
+<p><%#= link_to "back to the Poets!", poets_path %></p>
 
 <br>
-<p><%= link_to "add a poem", new_poem_path(@poet) %></p>
+<p><%#= link_to "add a poem", new_poem_path(@poet) %></p> -->
+<p><%#= link_to "welcome page", welcome_path(@poet.user) %></p>
