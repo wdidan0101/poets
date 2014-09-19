@@ -29,9 +29,11 @@ module SessionsHelper
 
     # If not already set, retrieve user from MongoDB
     def current_user
-        if logged_in?
-            @current_user ||= User.find(cookies[:cookie_id])
-        else
+        begin
+            if logged_in?
+                @current_user ||= User.find(cookies[:cookie_id])  # cookie_id exists sometimes
+            end
+        rescue
             nil
         end
     end
