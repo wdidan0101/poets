@@ -7,6 +7,9 @@ gem 'autoprefixer-rails'
 
 ####
 
+# heroku app #
+gem 'rails_12factor'
+
 gem 'mongoid', github: 'mongoid/mongoid'
 
 gem 'genghis', '~> 1.4.1', group: :development
