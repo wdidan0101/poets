@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# mongoid paperclip
+
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'aws-sdk', '~> 1.3.4'
+
 # twitter bootstrap
 
 gem 'bootstrap-sass', '~> 3.2.0'

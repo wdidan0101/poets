@@ -3,12 +3,15 @@
 <h2>Welcome to Poets, </h2>
 <h1> <%= @user.name %> .</h1>
 
-<p><%#= link_to 'go to your poems', poems_path %></p>
+<p> Origin : <%= @user.origin %> </p>
+<p> Email : <%= @user.email %> </p>
+
+<p><%= link_to 'edit user settings', edit_user_path(@user) %></p>
 
 <% if !@user.poet %>
 	<p><%= link_to 'create poet profile', new_poet_path %></p>
 <% else %>
-	<p><%#= link_to 'your poems', poems_path(@user.poet) %></p>
+	<p><%= link_to 'edit poet profile', edit_user_path %></p>
 <% end %>
 
 <p><%#= link_to "log out!", log_out_path, method: :delete%></p>

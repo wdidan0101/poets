@@ -2,6 +2,19 @@
 <h1 class="text-center"><%= @poet.name %> </h1>
 <h4 class="text-center">of <%= @poet.origin %></h4>		
 
+<%= image_tag @poet.avatar.url(:medium), class: "avatar" %>
+
+<% if @poet.avatar %>
+	<%= form_for @poet, url: poet_path(@poet), :html => { class: "form-center", :multipart => true } do |f| %>
+	  <p>
+	    <%= f.file_field :avatar %>
+	  </p>
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+<% end %>
+
 <div class="filler"></div>
 
 <% @poet.poems.each do |p| %>

@@ -6,7 +6,6 @@ class PoetsController < ApplicationController
 
   	def show
   		@poet = Poet.find(params[:id])
-  		@edit = true
 	end
 
 	def new
@@ -32,17 +31,17 @@ class PoetsController < ApplicationController
 
 	def edit
 		@poet = Poet.find(params[:id])
-		@edit = false
 	end
 
 
 	def update
+		puts params[:poet]
 		@poet = Poet.find(params[:id])
 
-		if @poet.update_attributes(params.require(:poet).permit(:name, :origin))
-			redirect_to poets_path
+		if @poet.update_attributes(poet_params)
+			redirect_to poet_path(@poet)
 		else
-			render 'edit'
+			render 'show'
 		end
 	end
 
@@ -56,7 +55,7 @@ class PoetsController < ApplicationController
 
   private
   	def poet_params
-    	params.require(:poet).permit(:name, :origin)
+    	params.require(:poet).permit(:name, :origin, :avatar)
   	end
 
 end
