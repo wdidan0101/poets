@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
-     @user = User.new(params.require(:user).permit(:name, :email, :origin, :password))
+     @user = User.new(params.require(:user).permit(:name, :email, :password))
      if @user.save
           # log the user in
           redirect_to root_path
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :origin)
+      params.require(:user).permit(:name, :email)
     end
 
 

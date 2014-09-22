@@ -1,11 +1,14 @@
 <div class="sessions">
 <h1>Welcome to Poets.</h1>
 
+<div class="filler-sessions"></div>
+
 <% if logged_in? %>
 	<p>You are logged in.</p>
 <% else %>
 	<p>You are not logged in.</p>
 <% end %>
+
 
 <%= link_to "Sign up.", signup_path %><br>
 <%= link_to "Log in.", sessions_path %><br>

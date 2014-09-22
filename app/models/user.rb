@@ -5,7 +5,6 @@ class User
 
   field :name, type: String
   field :email, type: String
-  field :origin, type: String
 
   has_one :poet
 

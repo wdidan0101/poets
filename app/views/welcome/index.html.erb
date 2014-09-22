@@ -1,18 +1,25 @@
 
 <div class="welcome">
-<h2>Welcome to Poets, </h2>
-<h1> <%= @user.name %> .</h1>
+<!-- <h2>Welcome to Poets, </h2> -->
+<h1> <%= @user.name %>.</h1>
 
-<p> Origin : <%= @user.origin %> </p>
+<div class="filler-welcome"></div>
+
 <p> Email : <%= @user.email %> </p>
+<% if @user.poet %>
+<p> Origin : <%= @user.poet.origin %> </p>
+<% end %>
 
-<p><%= link_to 'edit user settings', edit_user_path(@user) %></p>
+
+<p><%= link_to 'user settings.', edit_user_path(@user) %></p>
 
 <% if !@user.poet %>
-	<p><%= link_to 'create poet profile', new_poet_path %></p>
+	<p><%= link_to 'create poet profile.', new_poet_path %></p>
 <% else %>
-	<p><%= link_to 'edit poet profile', edit_user_path %></p>
+	<p><%= link_to 'poet profile.', edit_poet_path(@user.poet) %></p>
 <% end %>
+
+<p><%= link_to "log out.", log_out_path, method: :delete%></p>
 
 <p><%#= link_to "log out!", log_out_path, method: :delete%></p>
 

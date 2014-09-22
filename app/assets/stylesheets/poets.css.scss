@@ -1,3 +1,19 @@
+.poet-name {
+	text-align: center;
+	padding-top: 0px;
+	margin-top: 5px;
+}
+
+.poetic-work {
+	text-align: center;
+	padding-bottom: 0px;
+	margin-bottom: 0px;	
+}
+
+.poem-list {
+	text-align: center;		
+}
+
 .poem-title {
 
 	text-align: center;	
@@ -7,7 +23,7 @@
 }
 
 .filler {
-	height: 50px;
+	height: 30px;
 }
 
 .avatar {
@@ -24,4 +40,8 @@
     width:fit-content;
     margin:0 auto;
     overflow:hidden; /* Contain the floated li elements */
+}
+
+.options {
+	text-align: center;	
 }
